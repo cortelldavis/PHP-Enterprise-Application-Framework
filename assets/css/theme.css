@@ -2,26 +2,58 @@ body,html{
 
 }
 
+/*START HEADER*/
+
+header .navbar ul li button{
+	
+	font-size: 20px;
+}
+header .navbar ul li button:hover,header .navbar ul li button:focus,header .navbar ul li button:active {
+	color: white ;
+	outline: none;
+}
+
+/*END HEADER*/
+
+/*START CONTENT*/
+#content{
+min-height: 800px;
+background: #D9D9D9;
+}
+/*END CONTENT*/
+
+/*START FOOTER*/
+footer{}
+/*END FOOTER*/
+
 /* START COLORS */
 
 .red_font{color: red;}
-.blue_font{}
-.green_font{}
-.yellow_font{}
-.orange_font{}
-.black_font{}
-.grey_font{}
-.white_font{}
+.blue_font{color: blue;}
+.green_font{color: green;}
+.yellow_font{color: yellow;}
+.orange_font{color: orange;}
+.black_font{color: black;}
+.gray_font{color: gray;}
+.white_font{color: white;}
 
 
-.red_background{}
-.blue_background{}
-.green_background{}
-.yellow_background{}
-.orange_background{}
-.black_background{}
-.grey_background{}
-.white_background{}
+.red_background{background-color: red;}
+.blue_background{background-color: blue;}
+.green_background{background-color: green;}
+.yellow_background{background-color: yellow;}
+.orange_background{background-color: orange;}
+.black_background{background-color: black;}
+.gray_background{background-color: gray;}
+.white_background{background-color: white;}
+.no_background{background-color: transparent;}
 
 
 /* END COLORS */
+
+/* START SPACER */
+.spacer{
+	height: 51px;
+}
+/* END SPACER */
+
