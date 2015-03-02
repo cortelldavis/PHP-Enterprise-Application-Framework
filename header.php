@@ -27,18 +27,27 @@
      <!-- PHP Mailer -->
     <link href="plugins/PHPMailer/" rel="stylesheet">
 
-
     <!--START Modals-->
     <?php include('snippets/modals/login_modal.php') ?>
     <?php include('snippets/modals/register_modal.php') ?>
     <!--END Modals-->
 
-    <!--START Functions-->
+    <!--START Scripts-->
     <?php include('classes/scripts/functions.php') ?>
-    <!--END Functions-->
+    <?php# include('classes/scripts/init.php') ?>        
+    <!--END Scripts-->
+    
+    <!--START Models-->
+    <?php include('classes/models/user_model.php') ?>    
+    <!--END Models-->
 
 
+   <!--JQuery-->
+    <script src="assets/js/jquery-2.1.3.min.js"></script>
 
+   <!--Highcharts-->
+    <script src="plugins/Highcharts-4.1.1/js//highcharts.js"></script>
+    
 </head>
 
 <header>
