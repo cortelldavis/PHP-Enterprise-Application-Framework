@@ -1,29 +1,19 @@
-<?php include('header.php') ?>
+<?php 
 
+switch ($_GET["uri"]) {
+    case "home":
+        include('classes/controllers/home_controller.php');
+        break;
+    case "dashboard":
+        include('classes/controllers/dashboard_controller.php');
+        break;
+    case "login":
+        include('classes/controllers/login_controller.php');
+        break;
+       default:
+    echo "page not found";
+    phpinfo();
+}
 
-    <div class="container theme-showcase" role="main">
+?>
 
-      <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Theme example</h1>
-        <p class="red_font">This is a red text notification.</p>
-        <ul>
-          <h1>Site Map</h1>
-          <li>Landing Page - for marketing</li>
-          <li>Welcome Page - for returning users</li>
-          <li>Home Page - default for unknown direct users </li>
-          <li>Dashboard</li>
-          <li>Account</li>
-          <li>Preferences</li>
-          <li>Settings</li>
-          <li>Options</li>
-          <li>Contact</li>
-          <li>About Us</li>
-          <li>Meet the Team</li>
-          <li>Products</li>
-          <li>Services</li>
-        </ul>
-      </div>
-
-
-<?php include('footer.php') ?>

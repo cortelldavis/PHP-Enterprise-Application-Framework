@@ -46,7 +46,7 @@ function login_and_get(){
 #$ACTIVE_USER["address"] = array("street_address","zip","city","state");
 
 /*DEBUG FLAG , SHOWS ERRORS*/
-$debug=false;
+$debug=true;
 if($debug){
 	ini_set('display_errors', 1);
 	error_reporting(E_ALL ^ E_NOTICE);

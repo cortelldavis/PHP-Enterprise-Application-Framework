@@ -34,14 +34,9 @@
 
     <!--START Scripts-->
     <?php include('classes/scripts/functions.php') ?>
-    <?php# include('classes/scripts/init.php') ?>        
+       
     <!--END Scripts-->
     
-    <!--START Models-->
-    <?php include('classes/models/user_model.php') ?>    
-    <!--END Models-->
-
-
    <!--JQuery-->
     <script src="assets/js/jquery-2.1.3.min.js"></script>
 

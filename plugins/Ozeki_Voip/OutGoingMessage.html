@@ -1,0 +1,71 @@
+<html>
+	<body>
+		<form action='http://localhost/SendSMS.php' method = 'post'>
+		<table>
+			<tr valign = 'top'>
+				<td>
+					<b>Command:</b>
+				</td>
+				<td>
+					 <b>SendSMS<b>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Server URL:
+				</td>
+				<td>
+					<input type = 'text' size = 38 name = 'tbServerUrl'>
+				</td>
+			<tr valign = 'top'>
+				<td>
+					API extension:
+				</td>
+				<td>
+					<input type = 'text' size = 38 name = 'tbApiExtension'>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Sender:
+				</td>
+				<td>
+					<input type = 'text' size = 38 name = 'tbSender'>
+				</td>
+			</tr>
+			<tr valign = 'top'>
+				<td>
+					Recipient:
+				</td>
+				<td>
+					<input type = 'text' size = 38 name = 'tbRecipient'>
+				</td>
+			</tr>
+			<tr valign = 'top'>
+				<td>
+					Message:
+				</td>
+				<td>
+					<textarea rows='4' cols = '30' wrap = 'physical' name = 'tbMessage'></textarea>
+				</td>
+			</tr>
+			<tr valign = 'top'>
+				<td>
+					Url:
+				</td>
+				<td>
+					<input type = 'text' size = 38 name = 'tbUrl'>
+				</td>
+			</tr>
+			<tr valign = 'top'>
+				<td>
+					
+				</td>
+				<td>
+					<input type = 'submit' name = 'btSendSMS' Value = 'Send SMS'>
+				</td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>

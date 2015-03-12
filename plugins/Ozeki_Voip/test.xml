@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+	<Delay>1</Delay>
+	<!-- Defining a simple IVR. Messages will be repeated after 10 seconds. -->
+	<UserInput timeout="10" repeat="true">
+		<InitialCommands>
+			<Speak>Welcome to the Ozeki Phone System XE IVR.</Speak>
+			<Speak>To send an SMS, press 1.</Speak>
+			<Speak>To hear some more information, press 2.</Speak>
+			<Speak>To transfer the call to another number, press 3.</Speak>
+		</InitialCommands>
+		<Inputs>
+			<Input key="1">
+				<!-- To try out SMS sending, please set an -->
+			<!-- SMS outside line and dialplan rules. -->
+				<Speak>A test SMS will be sent.</Speak>
+				<SendSms recipient="45026467">Hello from Ozeki Phone System XE! </SendSms>
+			</Input>
+			<Input key="2">
+				<Speak>You pressed button 2. For more information 
+						on OZML syntax, visit www.ozekiphone.com </Speak>
+			</Input>
+			<Input key="3">
+				<BlindTransfer>101</BlindTransfer>
+				<Speak>Sorry, but blind transfer failed to extension 101.
+				Please setup an extension in the system. </Speak>
+			</Input>
+		</Inputs>
+	</UserInput>
+	<Speak>Good bye.</Speak>
+</Response>

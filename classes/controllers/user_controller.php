@@ -7,33 +7,65 @@ include('classes/models/user_model.php');
 
 class User_Controller{
 	
-	public $user_model;
-	   function __construct(){
-	   $user_model = new User_Model();
-    }
+	private $user_model;
+    private $user_data;
 
-    function login(){
+    public function __construct(){
+     
+        $this->user_model = new User_Model();
+        $this->user_data = array();
 
-    }
-
-    function register(){
 
     }
 
-    function change(){
+    function login($username,$password){
 
+        if($this->user_model->verifyCredentials($username,$password)){
+            echo "<br>Username and Password Match!";
+
+            $result = $this->user_model->getUser($username);
+
+            while($row = $result->fetch_assoc()) {
+
+                $this->user_data['user_id'] = $row["user_id"];
+                $this->user_data['username'] = $row["username"];
+                $this->user_data['first_name'] = $row["first_name"];
+                $this->user_data['last_name'] = $row["last_name"];
+                $this->user_data['email'] = $row["email"];
+            }
+
+
+
+            echo "<pre>";
+            print_r($this->user_data);
+            echo "</pre>";
+        }
     }
 
     function logout(){
-
+        //set log out status to 0, and clear user array
     }
 
-    function __get(){
+    function isLoggedIn()
+{        //return login status
+    return false;
+}
 
-    }
+function isValid($username){
+        //checks whether the user is exists
+       # $user_model = new User_Model();
+    return $this->user_model->checkUsernameExists($username);
+}
 
-    function __set(){
+function register(){
 
-    }
+}
+
+function update(){
+        //saves changes to database
+        //copies $user_data elements into $user_model database rows
+}
+
+
 
 }

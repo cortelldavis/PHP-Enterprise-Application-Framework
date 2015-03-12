@@ -7,7 +7,7 @@
 
         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-        <form id="loginform" class="form-horizontal" role="form">
+        <form id="loginform" class="form-horizontal" role="form" action="login" method="post">
 
             <div style="margin-bottom: 25px" class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -32,7 +32,7 @@
             <!-- Log in Button -->
 
                 <div class="col-sm-12 controls">
-                <button class="btn btn-primary" type="submit">Login</button>
+                <button name="submit" class="btn btn-primary" type="submit">Login</button>                
                 </div>
             </div>
 

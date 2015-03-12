@@ -1,0 +1,19 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /application/
+
+
+#RewriteRule ^(.*)\.htm$ $1.php [NC]
+
+#RewriteRule ^(.+)\.htm$ $1.php [NC]
+
+#RewriteCond %{REQUEST_URI} !^/index.php
+#RewriteRule ^(.*)$ index.php [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?uri=$1 [QSA,L]
+
+#RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+
