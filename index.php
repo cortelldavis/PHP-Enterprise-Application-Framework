@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 
 switch ($_GET["uri"]) {
     case "home":
@@ -9,6 +11,9 @@ switch ($_GET["uri"]) {
         break;
     case "login":
         include('classes/controllers/login_controller.php');
+        break;
+    case "logout":
+        include('classes/controllers/logout_controller.php');
         break;
        default:
     echo "page not found";

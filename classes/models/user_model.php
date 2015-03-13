@@ -41,7 +41,7 @@ class User_Model
         $sql = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
         $result = $this->connection->query($sql);
 
-        return $result;
+        return $result->fetch_assoc();
     }
 }
 

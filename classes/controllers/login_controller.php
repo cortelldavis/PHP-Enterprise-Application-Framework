@@ -6,25 +6,43 @@ $login = new Login_Controller();
 
 class Login_Controller{
 
-private $user;
+	private $user;
 
 	public	function __construct(){
-	$user = new User_Controller();
+		$user = new User_Controller();
 		
 		if ($this->loginAttempted()){
-			echo "attempting log in user " . $_POST['username'];
+			//if no user is stored in session then proceed to log in
+			if(empty($_SESSION['user'])){
+				echo "attempting log in user " . $_POST['username'];
 			echo "<br>";
 			if($user->isValid($_POST['username'])){				
 				echo "username exists";	
 
 				//...
 				$user->login($_POST['username'],$_POST['password']);
-				#$user->isLoggedIn();	
+				
+				if($user->isLoggedIn()){
+
+					echo "<pre>";
+					print_r($user->getActiveUser());
+					echo "</pre>";
+					$_SESSION['user']=$user->getActiveUser();
+					echo "<br>User has been logged in";
+					header('Location:dashboard');
+				}else{
+
+				}
 
 			}else{
-			echo "username does not exist";
+				echo "username does not exist";
+			}
 		}
 		}	
+		//if an user has already been stored in session then redirect to home page
+		else{
+			header('Location:home');
+		}
 	}
 
 	public function loginAttempted(){

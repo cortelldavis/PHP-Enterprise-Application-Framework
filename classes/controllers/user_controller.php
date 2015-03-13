@@ -11,7 +11,7 @@ class User_Controller{
     private $user_data;
 
     public function __construct(){
-     
+
         $this->user_model = new User_Model();
         $this->user_data = array();
 
@@ -23,22 +23,11 @@ class User_Controller{
         if($this->user_model->verifyCredentials($username,$password)){
             echo "<br>Username and Password Match!";
 
-            $result = $this->user_model->getUser($username);
+            $this->user_data =  $result = $this->user_model->getUser($username);
 
-            while($row = $result->fetch_assoc()) {
+            $this->user_data['login_status'] = true;         
+            $this->user_data['last_login'] =  date('Y-m-d H:i:s');       
 
-                $this->user_data['user_id'] = $row["user_id"];
-                $this->user_data['username'] = $row["username"];
-                $this->user_data['first_name'] = $row["first_name"];
-                $this->user_data['last_name'] = $row["last_name"];
-                $this->user_data['email'] = $row["email"];
-            }
-
-
-
-            echo "<pre>";
-            print_r($this->user_data);
-            echo "</pre>";
         }
     }
 
@@ -48,7 +37,7 @@ class User_Controller{
 
     function isLoggedIn()
 {        //return login status
-    return false;
+    return $this->user_data['login_status'];
 }
 
 function isValid($username){
@@ -66,6 +55,12 @@ function update(){
         //copies $user_data elements into $user_model database rows
 }
 
+function getActiveUser(){
+    return $this->user_data;
+}
+function setActiveUser($user){
+    $this->user_data = $user;
+}
 
 
 }

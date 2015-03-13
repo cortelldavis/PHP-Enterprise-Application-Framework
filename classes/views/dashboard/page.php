@@ -1,9 +1,3 @@
-<?php include('header.php') ?>
-
-<?php 
-#printUsers(); 
-#login_and_get();
-?>
 
 <div id="content">
   <div class="container">
@@ -68,4 +62,3 @@
     </div>
   </div>
 </div>
-<?php include('footer.php') ?>
