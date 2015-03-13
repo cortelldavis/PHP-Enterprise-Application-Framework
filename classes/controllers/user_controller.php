@@ -6,8 +6,8 @@ include('classes/models/user_model.php');
 
 
 class User_Controller{
-	
-	private $user_model;
+
+    private $user_model;
     private $user_data;
 
     public function __construct(){
@@ -32,7 +32,7 @@ class User_Controller{
     }
 
     function logout(){
-        //set log out status to 0, and clear user array
+//set log out status to 0, and clear user array
     }
 
     function isLoggedIn()
@@ -40,19 +40,26 @@ class User_Controller{
     return $this->user_data['login_status'];
 }
 
-function isValid($username){
-        //checks whether the user is exists
-       # $user_model = new User_Model();
-    return $this->user_model->checkUsernameExists($username);
+function isValid($field,$type){
+    if($type=="username"){
+//checks whether the username is exists        
+        return $this->user_model->checkUsernameExists($field);
+    }
+    if($type=="email"){       
+//checks whether the email is exists    
+        return $this->user_model->checkEmailExists($field);
+    }
 }
 
-function register(){
+function register($user_array){
+
+    $this->user_model->insertUser($user_array['username'],$user_array['first_name'],$user_array['last_name'],$user_array['email'], $user_array['password']);
 
 }
 
 function update(){
-        //saves changes to database
-        //copies $user_data elements into $user_model database rows
+//saves changes to database
+//copies $user_data elements into $user_model database rows
 }
 
 function getActiveUser(){

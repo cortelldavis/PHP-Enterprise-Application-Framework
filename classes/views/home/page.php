@@ -1,1 +1,3 @@
-Home Page
+<?php
+include('snippets/components/jumbotron');
+?>

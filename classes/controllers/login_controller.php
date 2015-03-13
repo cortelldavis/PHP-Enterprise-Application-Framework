@@ -9,14 +9,14 @@ class Login_Controller{
 	private $user;
 
 	public	function __construct(){
-		$user = new User_Controller();
 		
 		if ($this->loginAttempted()){
+		$user = new User_Controller();
 			//if no user is stored in session then proceed to log in
 			if(empty($_SESSION['user'])){
 				echo "attempting log in user " . $_POST['username'];
 			echo "<br>";
-			if($user->isValid($_POST['username'])){				
+			if($user->isValid($_POST['username'],"username")){				
 				echo "username exists";	
 
 				//...
@@ -30,8 +30,6 @@ class Login_Controller{
 					$_SESSION['user']=$user->getActiveUser();
 					echo "<br>User has been logged in";
 					header('Location:dashboard');
-				}else{
-
 				}
 
 			}else{

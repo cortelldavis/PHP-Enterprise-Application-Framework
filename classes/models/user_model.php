@@ -37,11 +37,30 @@ class User_Model
 
     }
 
+    function checkEmailExists($email){
+
+        $sql = "SELECT * FROM user WHERE email = '$email' LIMIT 1";
+        $result = $this->connection->query($sql);
+        return $result->num_rows;
+
+    }
+
     function getUser($username){
         $sql = "SELECT * FROM user WHERE username = '$username' LIMIT 1";
         $result = $this->connection->query($sql);
 
         return $result->fetch_assoc();
+    }
+
+    function insertUser($username,$first_name,$last_name,$email,$password){
+        $sql = "INSERT INTO user (username, first_name, last_name, email, password)
+        VALUES ('$username', '$first_name', '$last_name', '$email', '$password')";
+
+        if ($this->connection->query($sql) === TRUE) {
+            echo "<br>New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $this->connection->error;
+        }
     }
 }
 
@@ -55,8 +74,6 @@ $whitelist = array("firstname", "lastname");
 if(!in_array($key, $whitelist))
 throw new Exception("Invalid property");
 }
-*/
-/*
 
 $sql = "SELECT * FROM user WHERE user_id = 1";
 $result = $conn->query($sql);

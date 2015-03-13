@@ -4,7 +4,7 @@
         <div class="panel-title">Register</div>
     </div>  
     <div class="panel-body" >
-        <form id="signupform" class="form-horizontal" role="form" action="#" method="post">
+        <form id="signupform" class="form-horizontal" role="form" action="register" method="post">
 
             <div id="signupalert" style="display:none" class="alert alert-danger">
                 <p>Error:</p>
@@ -36,7 +36,7 @@
                 <div class="col-md-9">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                    <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name">
                 </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div class="col-md-9">
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                    <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name">
                 </div>
                 </div>
             </div>
@@ -59,9 +59,6 @@
                     </div>
                 </div>
             </div>
-
-
-
 
             <div class="form-group">
                 <label for="confirm_password" class="col-md-3 control-label">Confirm Password</label>
@@ -86,7 +83,7 @@
             <div class="form-group">
                 <!-- Submit Button -->                                        
                 <div class="col-md-offset-3 col-md-9">
-                    <button name="register_submit" type="submit" class="btn btn-primary">Sign Up</button>
+                    <button name="submit" type="submit" class="btn btn-primary">Sign Up</button>
                 </div>
             </div>
 
