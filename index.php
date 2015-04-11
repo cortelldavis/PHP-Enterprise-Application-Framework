@@ -20,7 +20,7 @@ switch ($_GET["uri"]) {
     break;
     default:
     echo "page not found";
-    phpinfo();
+    #phpinfo();
 }
 
 ?>

@@ -34,6 +34,7 @@ class Login_Controller{
 
 			}else{
 				echo "username does not exist";
+				header('Location:home');
 			}
 		}
 		}	

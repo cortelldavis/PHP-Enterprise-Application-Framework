@@ -1,7 +1,6 @@
 </body>
 
 <footer>
-	<div class=""></div>
 	<pre>@Copyright.2015 Application</pre>
 </footer>
 

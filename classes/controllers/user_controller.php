@@ -3,16 +3,19 @@
 user controller should call the user model's methods to get the data ready to be passed to the view. The controller shouldn't perform any changes to the data, but it should test it to get the necessary action done properly.
 */
 include('classes/models/user_model.php');
+include('classes/models/address_model.php');
 
 
 class User_Controller{
 
     private $user_model;
+    private $address_model;
     private $user_data;
 
     public function __construct(){
 
         $this->user_model = new User_Model();
+        $this->address_model = new Address_Model();
         $this->user_data = array();
 
 
